@@ -61,3 +61,28 @@ body section:nth-last-child(1),
 body section:nth-last-child(2) {
     border-bottom-width: 10px;
 }
+
+.purple{
+    background: #C3A5F5 !important;
+}
+
+.peach {
+    background: #FFA9AF !important;
+}
+.yellow{
+    background: #FFE000 !important;
+}
+.green{
+    background: #3CC8AA !important;
+}
+
+body section div {
+    visibility: hidden !important;
+}
+
+body section h1{
+    font-size: 5em;
+    text-align: center;
+    font-weight: 900;
+    
+}
