@@ -1,0 +1,5 @@
+* {
+    /* so cursor needs to be 32px or lesser to work */
+    cursor: -webkit-image-set(url("../img/pointer32.png") 1x, url("../img/pointer32.png") 2x) 0 0, none !important;
+    /* default fall back */
+}
