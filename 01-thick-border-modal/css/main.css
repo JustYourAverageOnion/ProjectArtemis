@@ -107,6 +107,22 @@ body>header>.right>ul>li+li:before {
     border: solid 10px black;
     border-radius: 50%;
 }
+.home>.logo:hover:before {
+    transform: translate(-75%,-50%);
+    transition: all 0.1s;
+}
+.home>.logo:hover:after {
+    transform: translate(-20%,-140%);
+    transition: all 0.1s;
+}
+.home>.logo:not(:hover):before {
+    transform: translate(-50%,-50%);
+    transition: all 0.1s;
+}
+.home>.logo:not(:hover):after {
+    transform: translate(-50%,-50%);
+    transition: all 0.1s;
+}
 
 body>section {
     display: block;
