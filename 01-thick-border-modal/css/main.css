@@ -94,6 +94,8 @@ body>header>.right>ul>li+li:before {
     height: 55%;
     border: solid 10px black;
     border-radius: 50%;
+    transition: all 0.5s;
+    transition-delay: 0.5s;
     
 }
 .home>.logo:after {
@@ -106,22 +108,19 @@ body>header>.right>ul>li+li:before {
     height: 10%;
     border: solid 10px black;
     border-radius: 50%;
+    transition: all 0.5s;
+    transition-delay: 0.5s;
 }
 .home>.logo:hover:before {
     transform: translate(-75%,-50%);
-    transition: all 0.1s;
 }
 .home>.logo:hover:after {
     transform: translate(-20%,-140%);
-    transition: all 0.1s;
 }
-.home>.logo:not(:hover):before {
+.home>.logo:not(:hover):before,
+.home>.logo:not(:hover):after,
+ {
     transform: translate(-50%,-50%);
-    transition: all 0.1s;
-}
-.home>.logo:not(:hover):after {
-    transform: translate(-50%,-50%);
-    transition: all 0.1s;
 }
 
 body>section {
