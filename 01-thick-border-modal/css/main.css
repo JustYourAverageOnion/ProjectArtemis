@@ -16,8 +16,8 @@ header {
     height: calc(14vh - 20px);
 }
 
-header > .left,
-header > .right {
+header>.left,
+header>.right {
     background: white;
     border: solid 10px black;
     /* https://www.w3schools.com/cssref/func_calc.asp */
@@ -25,18 +25,19 @@ header > .right {
     height: 100%;
 }
 
-header > .left {
+header>.left {
     border-right-width: 5px;
 }
 
-header > .right {
+header>.right {
     border-left-width: 5px;
 }
-.left{
+
+.left {
     float: left;
 }
 
-.right{
+.right {
     float: right;
 }
 
@@ -44,14 +45,32 @@ p.right {
     text-align: right;
 }
 
-body > header > div > p,
-body > header > div > span,
-body > header > div > ul
-{
+body>header>div>p,
+body>header>div>span,
+body>header>div>ul {
     padding: 2em;
+    font-size: 1em;
 }
 
-body > section {
+body>header>.right>ul {
+    /* padding: 10px 16px; */
+    font-size: 1.45em;
+    font-weight: 400;
+    list-style: none;
+}
+
+body>header>.right>ul>li {
+    display: inline;
+    /* font-size: 18px; */
+}
+
+body>header>.right>ul>li+li:before {
+    padding: 8px;
+    color: black;
+    content: "•";
+}
+
+body>section {
     display: block;
     height: calc(43vh - 10px);
     width: calc(50% - 15px);
@@ -62,20 +81,20 @@ body > section {
 
 /* https://www.w3schools.com/cssref/sel_nth-child.asp */
 
-body > section:nth-child(even) {
+body>section:nth-child(even) {
     float: left;
     border-left-width: 10px;
 }
 
-body > section:nth-child(odd) {
+body>section:nth-child(odd) {
     float: right;
     border-right-width: 10px;
 }
 
 /* https://www.w3schools.com/cssref/sel_nth-last-child.asp */
 
-body > section:nth-last-child(1),
-body > section:nth-last-child(2) {
+body>section:nth-last-child(1),
+body>section:nth-last-child(2) {
     border-bottom-width: 10px;
 }
 
@@ -95,25 +114,27 @@ body > section:nth-last-child(2) {
     background: #3CC8AA !important;
 }
 
-body > section > div {
+body>section>div {
     visibility: hidden !important;
 }
 
 /* https://www.w3.org/Style/Examples/007/center.en.html */
 
-body > section > span {
+body>section>span {
     height: 100%;
     display: flex;
     align-items: center
 }
 
-body > section > span > h1 {
+body>section>span>h1 {
     font-size: 5em;
     font-weight: 900;
     margin: 0 auto;
 }
+
 /* Wow love this one... on hover of span h1 inside is changed :O */
-body > section > span:hover > h1 {
+
+body>section>span:hover>h1 {
     transform: scale(1.3);
     /* https://www.w3schools.com/css/css3_transitions.asp */
     transition: all 1s;
@@ -121,8 +142,7 @@ body > section > span:hover > h1 {
 
 /* https://stackoverflow.com/questions/18493427/mouseover-and-mouseout-in-css */
 
-body > section > span:not(:hover) > h1 {
+body>section>span:not(:hover)>h1 {
     transform: scale(1);
     transition: all 1s;
 }
-
