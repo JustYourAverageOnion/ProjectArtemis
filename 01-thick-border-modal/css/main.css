@@ -1,5 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit|Roboto');
 * {
     /* so cursor needs to be 32px or lesser to work */
     cursor: -webkit-image-set(url("../img/pointer32.png") 1x, url("../img/pointer32.png") 2x) 0 0, none !important;
     /* default fall back */
+}
+
+html {
+    font-family: 'Kanit', 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+header {
+    display: block;
+    height: calc(10vh - 20px);
+}
+
+header .left,
+header .right {
+    background: white;
+    border: solid 10px black;
+    /* https://www.w3schools.com/cssref/func_calc.asp */
+    width: calc(50% - 15px);
+    height: 100%;
+}
+
+header .left {
+    float: left;
+    border-right-width: 5px;
+}
+
+header .right {
+    float: right;
+    border-left-width: 5px;
+}
+
+body section {
+    display: block;
+    height: calc(45vh - 10px);
+    width: calc(50% - 15px);
+    border: solid 5px black;
+    border-top-width: 0px;
+    border-bottom-width: 10px;
+}
+
+/* https://www.w3schools.com/cssref/sel_nth-child.asp */
+
+body section:nth-child(odd) {
+    float: left;
+    border-left-width: 10px;
+}
+
+body section:nth-child(even) {
+    float: right;
+    border-right-width: 10px;
+}
+
+/* https://www.w3schools.com/cssref/sel_nth-last-child.asp */
+
+body section:nth-last-child(1),
+body section:nth-last-child(2) {
+    border-bottom-width: 10px;
 }
