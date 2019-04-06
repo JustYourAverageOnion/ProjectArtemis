@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Kanit|Roboto');
+/* https://www.servage.net/blog/2013/06/21/using-google-fonts-and-styles-on-your-site/ */
+
+@import url('https://fonts.googleapis.com/css?family=Kanit:400,500,700,900|Roboto');
 * {
     /* so cursor needs to be 32px or lesser to work */
     cursor: -webkit-image-set(url("../img/pointer32.png") 1x, url("../img/pointer32.png") 2x) 16 16, none !important;
@@ -9,6 +11,30 @@ html {
     font-family: 'Kanit', 'Roboto', sans-serif;
     height: 100vh;
     overflow: hidden;
+}
+
+p {
+    font-weight: 400 !important;
+}
+
+b {
+    font-weight: 700;
+    width: auto;
+}
+
+b:before {
+    /* display: block; */
+    position: absolute;
+    content: '';
+    width: auto;
+    height: 5px;
+    background: red;
+    /* bottom: 0; */
+    transform: translate(0px, 20px);
+}
+
+b:hover:before {
+    opacity: 1;
 }
 
 header {
@@ -43,6 +69,7 @@ header>.right {
 
 p.right {
     text-align: right;
+    line-height: 1.4em;
 }
 
 body>header>div>p,
@@ -54,7 +81,7 @@ body>header>div>ul {
 
 body>header>.right>ul {
     font-size: 1.45em;
-    font-weight: 400;
+    font-weight: 700;
     list-style: none;
 }
 
@@ -69,7 +96,7 @@ body>header>.right>ul>li+li:before {
 }
 
 .home {
-    margin:10px;
+    margin: 10px;
     /* padding: 3.3em; */
     position: fixed;
 }
@@ -82,28 +109,28 @@ body>header>.right>ul>li+li:before {
     height: 7vh;
     border: solid 10px black;
     border-radius: 50%;
-    
 }
+
 .home>.logo:before {
     position: absolute;
     content: '';
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 55%;
     height: 55%;
     border: solid 10px black;
     border-radius: 50%;
     transition: all 0.5s;
     transition-delay: 0.5s;
-    
 }
+
 .home>.logo:after {
     position: absolute;
     content: '';
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 10%;
     height: 10%;
     border: solid 10px black;
@@ -111,16 +138,19 @@ body>header>.right>ul>li+li:before {
     transition: all 0.5s;
     transition-delay: 0.5s;
 }
+
 .home>.logo:hover:before {
-    transform: translate(-75%,-50%);
+    transform: translate(-75%, -50%);
 }
+
 .home>.logo:hover:after {
-    transform: translate(-20%,-140%);
+    transform: translate(-20%, -140%);
 }
+
 .home>.logo:not(:hover):before,
 .home>.logo:not(:hover):after,
- {
-    transform: translate(-50%,-50%);
+    {
+    transform: translate(-50%, -50%);
 }
 
 body>section {
@@ -198,4 +228,101 @@ body>section>span:hover>h1 {
 body>section>span:not(:hover)>h1 {
     transform: scale(1);
     transition: all 1s;
+}
+
+/* https://css-tricks.com/almanac/selectors/s/selection/ */
+
+::selection {
+    background-color: #000;
+    color: #fff
+}
+
+/* Really link how this animation turned output  */
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    transition-duration: .3s
+}
+
+.link {
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    cursor: none !important;
+}
+
+.link:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    background: #000;
+    bottom: -5px;
+    height: 5px;
+    transform: scale3d(0, 1, 1);
+    transform-origin: left;
+    /* smooth transitioning
+        should learn more on this
+    */
+    transition: all .8s cubic-bezier(.175, .885, .32, 1.275);
+    cursor: none !important;
+}
+
+p.right .link:after {
+    height: 5px;
+    bottom: -1px;
+}
+
+.link:hover:after {
+    transform: scale3d(1, 1, 1);
+    transition-duration: .3s;
+}
+
+/* dont like the gradients that much tho */
+
+/* https://www.schemecolor.com/twitter-branding-color-scheme.php */
+
+.link.tw:after {
+    background: linear-gradient(to right, #55ACEE 0%, #292F33 25%, #66757F 50%, #CCD6DD 75%, #E1E8ED 100%);
+}
+
+/* https://www.schemecolor.com/instagram-gradient-color-palette.php */
+
+.link.ig:after {
+    background: linear-gradient(to right, #F58529 0%, #FEDA77 25%, #DD2A7B 50%, #8134AF 75%, #515BD4 100%);
+}
+
+/* https://www.schemecolor.com/codepen.php */
+
+.link.cp:after {
+    background: linear-gradient(to right, #0EBEFF 0%, #47CF73 25%, #AE63E4 50%, #FCD000 75%, #FF3C41 100%);
+}
+
+/* https://www.schemecolor.com/github-cat-icon-colors.php */
+
+.link.gh:after {
+    background: linear-gradient(to right, #211f1f 0%, #f4cbb2 20%, #ad5c51 40%, #ffffff 50%, #9cdaf1 80%, #7dbbe6 100%);
+}
+
+/* https://www.schemecolor.com/github-cat-icon-colors.php */
+
+.link.yt:after {
+    background: linear-gradient(to right, #FF0000 0%, #FF0000 40%, #FFFFFF 40%, #FFFFFF 60%, #282828 60%, #282828 100%);
+}
+
+.link.hire:after {
+    background: #FFE000;
+}
+
+.link.contact:after {
+    background: #3CC8AA;
+}
+
+.link.css:after{
+    background: #C3A5F5;
 }
